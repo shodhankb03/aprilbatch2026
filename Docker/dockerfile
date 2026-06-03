@@ -1,0 +1,11 @@
+FROM nginx
+COPY index.html /usr/share/nginx/html
+
+EXPOSE 83
+CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+USER shodhan
+
+RUN echo "This is a custom nginx image with a custom index.html file." 
+RUN apt -get update && apt-get install -y curl
+

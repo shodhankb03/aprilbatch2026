@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docker Assignment App</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #0f172a; color: #e5eefb; margin: 0; display: grid; place-items: center; min-height: 100vh; }
+      .card { background: #111827; padding: 24px; border-radius: 16px; width: 420px; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35); }
+      h1 { color: #38bdf8; margin-top: 0; }
+      button, input { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #334155; margin-top: 8px; }
+      button { background: #22c55e; color: white; cursor: pointer; }
+      #result { margin-top: 12px; color: #bfdbfe; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Simple Docker App</h1>
+      <p>This page talks to a backend API and saves data in PostgreSQL.</p>
+      <button id="loadBtn">Load saved message</button>
+      <input id="note" type="text" placeholder="Type a message to save" />
+      <button id="saveBtn">Save message</button>
+      <div id="result">Waiting...</div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
