@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerassignment2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dockerassignment2
+  template:
+    metadata:
+      labels:
+        app: dockerassignment2
+    spec:
+      containers:
+        - name: dockerassignment2
+          image: shodhankb03/dockerassignment2:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dockerassignment2-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: dockerassignment2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
